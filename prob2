@@ -1,0 +1,17 @@
+import pandas as pd
+data1= {'Student':['Ice Bear','Panda','Grizzly'],
+        'Math': [80,95,79]}
+data2= {'Student':['Ice Bear','Panda','Grizzly'],
+        'Electronics':[85,81,83]}
+data3= {'Student':['Ice Bear','Panda','Grizzly'],
+        'GEAS': [90,79,93]}
+data4= {'Student':['Ice Bear','Panda','Grizzly'],
+        'ESAT':[93,89,88]}
+a = pd.DataFrame(data1, columns=['Student','Math'])
+b = pd.DataFrame(data2, columns=['Student','Electronics'])
+c = pd.DataFrame(data3, columns=['Student','GEAS'])
+d = pd.DataFrame(data4, columns=['Student','ESAT'])
+
+A = pd.merge(a, b, how='left', on='Student')
+B = pd.merge(A, c, how='left', on='Student')
+C = pd.merge(B, d, how='left', on='Student')
